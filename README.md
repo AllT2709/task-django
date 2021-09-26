@@ -25,6 +25,7 @@ The project is finished
   `$ pip install` or `$ pip3 install`
 
 **_note: You must build a virtualenv for this project_**
+**note: Carefull with the SECRET KEY, the app won't work**
 
 ### Run the project
 
