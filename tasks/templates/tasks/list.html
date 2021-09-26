@@ -1,0 +1,24 @@
+{% include 'tasks/base.html' %}
+
+
+
+<div class="center-column">
+<form method="POST" action="/">
+  {% csrf_token %}
+  {{form.title}}
+  <input type="submit" name="Create task" class="btn btn-info">
+</form>
+
+{% for task in tasks %}
+  <div class="item-row">
+    <a href="{% url 'update' task.id %}" class="btn btn-warning">update</a>
+    <a href="{% url 'delete' task.id %}" class="btn btn-danger">delete</a>
+
+    {% if task.complete == True %}
+    <strike>{{task.title}}</strike>
+    {% else %}
+    <span>{{task}}</span>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>

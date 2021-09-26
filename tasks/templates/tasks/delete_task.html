@@ -1,0 +1,14 @@
+{% include 'tasks/base.html' %}
+
+<div class="container justify-content-center mt-5">
+  <div class="row justify-content-center">
+    <p class="text-center">Are you sure you want to delete "{{item}}"</p>
+    <div class="card center-column">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="Confirm" class="btn btn-danger">
+        <a href="{% url 'list' %}" class="btn btn-warning">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
